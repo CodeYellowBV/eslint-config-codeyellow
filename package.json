@@ -1,0 +1,29 @@
+{
+  "name": "eslint-config-codeyellow",
+  "version": "0.1.0",
+  "description": "Code Yellow's ESLint config, following Airbnb's ESLint config with a few changes",
+  "author": "Kees Kluskens <kees@codeyellow.nl>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeYellowBV/eslint-config-codeyellow"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeYellowBV/eslint-config-codeyellow/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "styleguide"
+  ],
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-airbnb": "6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "~2.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "~2.2.0"
+  }
+}
