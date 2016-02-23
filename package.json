@@ -18,7 +18,7 @@
   "main": "index.js",
   "license": "ISC",
   "dependencies": {
-    "eslint-config-airbnb": "6.0.1"
+    "eslint-config-airbnb": "6.0.2"
   },
   "devDependencies": {
     "eslint": "~2.2.0"

@@ -16,8 +16,6 @@ module.exports = {
         'no-alert': 0,
         // Logging to console is not bad per definition; it can provide helpful information
         'no-console': 0,
-        // This conflicts with arrow-body-style, which requires you to use arrow functions
-        'no-confusing-arrow': 0,
         // TODO: We're doing param reassign all the time, but should we? (needs discussion)
         'no-param-reassign': 0,
         // In tests unused expressions are required (e.g. `expect(true).to.be.ok`)
