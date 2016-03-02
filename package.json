@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-codeyellow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Code Yellow's ESLint config, following Airbnb's ESLint config with a few changes",
   "author": "Kees Kluskens <kees@codeyellow.nl>",
   "repository": {
