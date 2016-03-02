@@ -5,5 +5,8 @@ module.exports = {
         'eslint-config-airbnb/rules/react',
         'eslint-config-codeyellow/rules/base',
     ].map(require.resolve),
-    rules: {}
+    rules: {
+        // Force to 4 spaces
+        'react/jsx-indent-props': [2, 4],
+    }
 };
