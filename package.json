@@ -21,9 +21,9 @@
     "eslint-config-airbnb": "6.0.2"
   },
   "devDependencies": {
-    "eslint": "~2.2.0"
+    "eslint": "2.x.x"
   },
   "peerDependencies": {
-    "eslint": "~2.2.0"
+    "eslint": "2.x.x"
   }
 }
