@@ -19,5 +19,7 @@ module.exports = {
         // Disallow using `parseInt(x, 10)` when you should use `parseInt(x)`.
         // We only support ES5 compliant browsers so this is safe.
         'radix': [2, 'as-needed'],
+        // Detecting unresolvable paths is too tricky for now; it would need to parse the webpack file.
+        'import/no-unresolved': 0,
     },
 };
