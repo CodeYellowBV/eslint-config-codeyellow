@@ -2,8 +2,6 @@ module.exports = {
     rules: {
         // At Code Yellow we use 4 spaces everywhere (if possible)
         'indent': [2, 4, { 'SwitchCase': 1 }],
-        // This would be very verbose; a newline should only be necessary if the line is too long
-        'newline-per-chained-call': 0,
         // TODO: We should really set a max line length at ~ 120 (needs discussion)
         'max-len': 0,
         // TODO: Disallow anonymous functions (needs discussion)
@@ -19,5 +17,11 @@ module.exports = {
         // Disallow using `parseInt(x, 10)` when you should use `parseInt(x)`.
         // We only support ES5 compliant browsers so this is safe.
         'radix': [2, 'as-needed'],
+        // Detecting unresolvable paths is too tricky for now; it would need to parse the webpack file.
+        'import/no-unresolved': 0,
+        // `(a) => 1 ? 2 : 3;` is not confusing at all?
+        'no-confusing-arrow': 0,
+        // The underscore prefix is used especially in Backbone to identify a model attribute as frontend only.
+        'no-underscore-dangle': 0,
     },
 };
