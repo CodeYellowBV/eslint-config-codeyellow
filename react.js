@@ -12,5 +12,11 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         // I want to use arrow functions in the `render` method.
         'react/jsx-no-bind': [2, { allowArrowFunctions: true }],
-    }
+        'react/jsx-filename-extension': [1, { 'extensions': ['.js'] }],
+        // Fails when you use <label><input type="radio" /></label>, so quite worthless...
+        'jsx-a11y/label-has-for': 0,
+    },
+    env: {
+        browser: true,
+    },
 };

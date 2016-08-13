@@ -19,6 +19,12 @@ module.exports = {
         'radix': [2, 'as-needed'],
         // Detecting unresolvable paths is too tricky for now; it would need to parse the webpack file.
         'import/no-unresolved': 0,
+        // See above.
+        'import/no-extraneous-dependencies': 0,
+        // Removed `absolute-first` from this rule, which forced absolute imports to be first. This is way too strict.
+        'import/imports-first': [2, ''],
+        // Mixed operators (e.g. using && and ||) on the same line is not confusing? 
+        'no-mixed-operators': 0,
         // `(a) => 1 ? 2 : 3;` is not confusing at all?
         'no-confusing-arrow': 0,
         // The underscore prefix is used especially in Backbone to identify a model attribute as frontend only.
