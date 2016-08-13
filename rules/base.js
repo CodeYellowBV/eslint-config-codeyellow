@@ -23,5 +23,7 @@ module.exports = {
         'no-confusing-arrow': 0,
         // The underscore prefix is used especially in Backbone to identify a model attribute as frontend only.
         'no-underscore-dangle': 0,
+        // Using `() => { return foo; }` can save a lot of time because it allows multiple lines.
+        'arrow-body-style': [0],
     },
 };
