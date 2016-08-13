@@ -4,5 +4,9 @@ module.exports = {
         'eslint-config-airbnb-base/rules/strict',
         'eslint-config-codeyellow/rules/base',
     ].map(require.resolve),
-    rules: {}
+    rules: {},
+    env: {
+        browser: true,
+        node: true,
+    },
 };

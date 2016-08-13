@@ -12,5 +12,8 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         // I want to use arrow functions in the `render` method.
         'react/jsx-no-bind': [2, { allowArrowFunctions: true }],
-    }
+    },
+    env: {
+        browser: true,
+    },
 };
