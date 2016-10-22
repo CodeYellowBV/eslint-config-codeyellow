@@ -23,6 +23,10 @@ module.exports = {
         'import/no-extraneous-dependencies': 0,
         // Removed `absolute-first` from this rule, which forced absolute imports to be first. This is way too strict.
         'import/imports-first': [2, ''],
+        // We want to remove extensions from imports when they are not necessary.
+        'import/extensions': 0,
+        // This is too big of a change for us at the moment (needs discussion).
+        'class-methods-use-this': 0,
         // Mixed operators (e.g. using && and ||) on the same line is not confusing? 
         'no-mixed-operators': 0,
         // `(a) => 1 ? 2 : 3;` is not confusing at all?
