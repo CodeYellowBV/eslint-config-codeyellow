@@ -20,6 +20,9 @@ module.exports = {
         'react/forbid-prop-types': [2, { forbid: ['any'] }],
         // Fails when you use <label><input type="radio" /></label>, so quite worthless...
         'jsx-a11y/label-has-for': 0,
+        // Stateless functions are better, but when developing you often don't know yet if it's going to have a state.
+        // Refactoring between stateless and stateful every time costs too much time.
+        'react/prefer-stateless-function': 0,
     },
     env: {
         browser: true,
