@@ -13,8 +13,6 @@ module.exports = {
         // Force to 4 spaces
         'react/jsx-indent-props': [2, 4],
         'react/jsx-indent': [2, 4],
-        // I want to use arrow functions in the `render` method.
-        'react/jsx-no-bind': [2, { allowArrowFunctions: true }],
         'react/jsx-filename-extension': [1, { 'extensions': ['.js'] }],
         // Airbnb also forbids `object` and `array`, but we have use cases where we "need" to be this vague.
         'react/forbid-prop-types': [2, { forbid: ['any'] }],
