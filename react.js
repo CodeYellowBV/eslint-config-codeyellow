@@ -21,14 +21,6 @@ module.exports = {
         // Stateless functions are better, but when developing you often don't know yet if it's going to have a state.
         // Refactoring between stateless and stateful every time costs too much time.
         'react/prefer-stateless-function': 0,
-        // Airbnb requires comma dangles for functions, which is an ES2017 feature. We are not mentally ready for that yet.
-        'comma-dangle': ['error', {
-            arrays: 'always-multiline',
-            objects: 'always-multiline',
-            imports: 'always-multiline',
-            exports: 'always-multiline',
-            functions: 'ignore',
-        }],
     },
     env: {
         browser: true,

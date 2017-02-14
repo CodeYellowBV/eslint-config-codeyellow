@@ -35,5 +35,13 @@ module.exports = {
         'no-underscore-dangle': 0,
         // Using `() => { return foo; }` can save a lot of time because it allows multiple lines.
         'arrow-body-style': [0],
+        // Airbnb requires comma dangles for functions, which is an ES2017 feature. We are not mentally ready for that yet.
+        'comma-dangle': ['error', {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'ignore',
+        }],
     },
 };
