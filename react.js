@@ -16,6 +16,8 @@ module.exports = {
         'react/jsx-filename-extension': [1, { 'extensions': ['.js'] }],
         // Airbnb also forbids `object` and `array`, but we have use cases where we "need" to be this vague.
         'react/forbid-prop-types': [2, { forbid: ['any'] }],
+        // Default props often don't make sense.
+        'react/require-default-props': 0,
         // Fails when you use <label><input type="radio" /></label>, so quite worthless...
         'jsx-a11y/label-has-for': 0,
         // Stateless functions are better, but when developing you often don't know yet if it's going to have a state.

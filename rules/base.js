@@ -21,6 +21,8 @@ module.exports = {
         'import/no-unresolved': 0,
         // See above.
         'import/no-extraneous-dependencies': 0,
+        // Often we want default exports to keep consistency with other files.
+        'import/prefer-default-export': 0,
         // Removed `absolute-first` from this rule, which forced absolute imports to be first. This is way too strict.
         'import/imports-first': [2, ''],
         // We want to remove extensions from imports when they are not necessary.
