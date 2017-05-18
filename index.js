@@ -1,7 +1,73 @@
-'use strict';
-
 // Mostly copied from https://github.com/facebookincubator/create-react-app/blob/master/packages/eslint-config-react-app
 // But with a few changes
+
+'use strict';
+
+// The ESLint browser environment defines all browser globals as valid,
+// even though most people don't know some of them exist (e.g. `name` or `status`).
+// This is dangerous as it hides accidentally undefined variables.
+// We blacklist the globals that we deem potentially confusing.
+// To use them, explicitly reference them, e.g. `window.name` or `window.status`.
+var restrictedGlobals = [
+  'addEventListener',
+  'blur',
+  'close',
+  'closed',
+  'confirm',
+  'defaultStatus',
+  'defaultstatus',
+  'event',
+  'external',
+  'find',
+  'focus',
+  'frameElement',
+  'frames',
+  'history',
+  'innerHeight',
+  'innerWidth',
+  'length',
+  'location',
+  'locationbar',
+  'menubar',
+  'moveBy',
+  'moveTo',
+  'name',
+  'onblur',
+  'onerror',
+  'onfocus',
+  'onload',
+  'onresize',
+  'onunload',
+  'open',
+  'opener',
+  'opera',
+  'outerHeight',
+  'outerWidth',
+  'pageXOffset',
+  'pageYOffset',
+  'parent',
+  'print',
+  'removeEventListener',
+  'resizeBy',
+  'resizeTo',
+  'screen',
+  'screenLeft',
+  'screenTop',
+  'screenX',
+  'screenY',
+  'scroll',
+  'scrollbars',
+  'scrollBy',
+  'scrollTo',
+  'scrollX',
+  'scrollY',
+  'self',
+  'status',
+  'statusbar',
+  'stop',
+  'toolbar',
+  'top',
+];
 
 module.exports = {
   root: true,
@@ -25,16 +91,6 @@ module.exports = {
       jsx: true,
       generators: true,
       experimentalObjectRestSpread: true,
-    },
-  },
-
-  settings: {
-    'import/ignore': ['node_modules'],
-    'import/extensions': ['.js'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.json'],
-      },
     },
   },
 
@@ -68,7 +124,7 @@ module.exports = {
     'no-invalid-regexp': 'warn',
     'no-iterator': 'warn',
     'no-label-var': 'warn',
-    'no-labels': ['warn', { allowLoop: false, allowSwitch: false }],
+    'no-labels': ['warn', { allowLoop: true, allowSwitch: false }],
     'no-lone-blocks': 'warn',
     'no-loop-func': 'warn',
     'no-mixed-operators': [
@@ -95,7 +151,7 @@ module.exports = {
     'no-octal-escape': 'warn',
     'no-redeclare': 'warn',
     'no-regex-spaces': 'warn',
-    'no-restricted-syntax': ['warn', 'LabeledStatement', 'WithStatement'],
+    'no-restricted-syntax': ['warn', 'WithStatement'],
     'no-script-url': 'warn',
     'no-self-assign': 'warn',
     'no-self-compare': 'warn',
@@ -106,7 +162,7 @@ module.exports = {
     'no-this-before-super': 'warn',
     'no-throw-literal': 'warn',
     'no-undef': 'error',
-    'no-restricted-globals': ['error', 'event'],
+    'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-unexpected-multiline': 'warn',
     'no-unreachable': 'warn',
     'no-unused-expressions': [
@@ -120,8 +176,6 @@ module.exports = {
     'no-unused-vars': [
       'warn',
       {
-        vars: 'local',
-        varsIgnorePattern: '^_',
         args: 'none',
         ignoreRestSiblings: true,
       },
@@ -142,20 +196,15 @@ module.exports = {
     'no-with': 'warn',
     'no-whitespace-before-property': 'warn',
     'operator-assignment': ['warn', 'always'],
-    'radix': ['warn', 'as-needed'],
+    radix: 'warn',
     'require-yield': 'warn',
     'rest-spread-spacing': ['warn', 'never'],
-    'strict': ['warn', 'never'],
+    strict: ['warn', 'never'],
     'unicode-bom': ['warn', 'never'],
     'use-isnan': 'warn',
     'valid-typeof': 'warn',
     'no-restricted-properties': [
       'error',
-      {
-        object: 'require',
-        property: 'ensure',
-        message: 'Please use import() instead. More info: https://webpack.js.org/guides/code-splitting-import/#dynamic-import',
-      },
       {
         object: 'System',
         property: 'import',
@@ -163,23 +212,13 @@ module.exports = {
       },
     ],
 
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/
-    'import/default': 'warn',
-    'import/export': 'warn',
-    'import/named': 'warn',
-    'import/namespace': 'warn',
-    'import/no-amd': 'warn',
-    'import/no-duplicates': 'warn',
-    'import/no-extraneous-dependencies': 'warn',
-    'import/no-named-as-default': 'warn',
-    'import/no-named-as-default-member': 'warn',
-    'import/no-unresolved': ['warn', { commonjs: true }],
-    // We don't support configuring Webpack using import source strings, so this
-    // is always an error.
+    // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
+    'import/first': 'error',
+    'import/no-amd': 'error',
     'import/no-webpack-loader-syntax': 'error',
 
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/jsx-equals-spacing': ['warn', 'never'],
+    'react/jsx-no-comment-textnodes': 'warn',
     'react/jsx-no-duplicate-props': ['warn', { ignoreCase: true }],
     'react/jsx-no-undef': 'error',
     'react/jsx-pascal-case': [
@@ -196,13 +235,7 @@ module.exports = {
     'react/no-direct-mutation-state': 'warn',
     'react/no-is-mounted': 'warn',
     'react/react-in-jsx-scope': 'error',
-    'react/require-render-return': 'warn',
+    'react/require-render-return': 'error',
     'react/style-prop-object': 'warn',
-
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
-    'jsx-a11y/aria-role': 'warn',
-    'jsx-a11y/img-has-alt': 'warn',
-    'jsx-a11y/img-redundant-alt': 'warn',
-    'jsx-a11y/no-access-key': 'warn',
   },
 };
