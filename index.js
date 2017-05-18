@@ -196,7 +196,7 @@ module.exports = {
     'no-with': 'warn',
     'no-whitespace-before-property': 'warn',
     'operator-assignment': ['warn', 'always'],
-    radix: 'warn',
+    radix: ['warn', 'as-needed'],
     'require-yield': 'warn',
     'rest-spread-spacing': ['warn', 'never'],
     strict: ['warn', 'never'],
