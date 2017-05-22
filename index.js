@@ -67,6 +67,7 @@ var restrictedGlobals = [
   'stop',
   'toolbar',
   'top',
+  'Text',
 ];
 
 module.exports = {
