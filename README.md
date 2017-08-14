@@ -15,11 +15,3 @@ Create a `.eslintrc` file with:
     "extends": "codeyellow"
 }
 ```
-
-If you use React:
-
-```json
-{
-    "extends": "codeyellow/react",
-}
-```
