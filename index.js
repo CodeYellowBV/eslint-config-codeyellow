@@ -75,7 +75,7 @@ module.exports = {
 
   parser: 'babel-eslint',
 
-  plugins: ['import', 'jsx-a11y', 'react'],
+  plugins: ['import', 'react'],
 
   env: {
     browser: true,
