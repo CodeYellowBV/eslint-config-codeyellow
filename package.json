@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-codeyellow",
   "version": "4.1.3",
-  "description": "Code Yellow's ESLint config, following Airbnb's ESLint config with a few changes",
+  "description": "Code Yellow's ESLint config, following Create React App config with a few changes",
   "author": "Kees Kluskens <kees@codeyellow.nl>",
   "repository": {
     "type": "git",

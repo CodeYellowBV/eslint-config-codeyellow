@@ -1,6 +1,6 @@
 # eslint-config-codeyellow
 
-Extends [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), with a few changes.
+Based on [eslint-config-react-app](https://github.com/facebookincubator/create-react-app/tree/master/packages/eslint-config-react-app) with a few changes.
 
 ## Usage
 
